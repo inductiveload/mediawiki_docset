@@ -1,0 +1,7 @@
+venv
+mediawiki-core
+doxygen
+*.docset
+
+*.deb
+*.tgz

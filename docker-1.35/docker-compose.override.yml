@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  # These lines ensure file ownership is set to your host user/group
+  mediawiki:
+    user: "${MW_DOCKER_UID}:${MW_DOCKER_GID}"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../doxygen:/doxygen
+  mediawiki-jobrunner:
+    user: "${MW_DOCKER_UID}:${MW_DOCKER_GID}"

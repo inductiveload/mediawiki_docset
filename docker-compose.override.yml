@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  # These lines ensure file ownership is set to your host user/group
+  mediawiki:
+    user: "${MW_DOCKER_UID}:${MW_DOCKER_GID}"
+    # Linux users only: this extra_hosts section is necessary for Xdebug:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    volumes:
+      - ../doxygen:/doxygen
+  mediawiki-web:
+    user: "${MW_DOCKER_UID}:${MW_DOCKER_GID}"
+  mediawiki-jobrunner:
+    user: "${MW_DOCKER_UID}:${MW_DOCKER_GID}"
