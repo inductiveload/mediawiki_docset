@@ -1,5 +1,5 @@
      <key>isJavaScriptEnabled</key>
-     <true>
+     <true/>
      <key>DashDocSetFallbackURL</key>
      <string>https://doc.wikimedia.org/mediawiki-core/master/php</string>
 </dict>
